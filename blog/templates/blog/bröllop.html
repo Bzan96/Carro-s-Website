@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+	<title>{% block title %}Faces by Carolina{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Makeup, naglar och fransar, av Carolina">
+	<meta name="keywords" content="makeup, naglar, fransar, fransförlängning, smink, vaxning">
+	<meta name="author" content="Christopher Einarsson">
+	<link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+	
+	<link rel="icon" href="{% static 'pics/CT_favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+	<div class="dropdown">
+		<a href="{% url 'wedding' %}" id="dropbtn">&#9776;</a>
+		<div class="dropdown-content">
+			<a href="{% url 'index' %}">Hem</a>
+			<a href="{% url 'wedding' %}">Bröllop</a>
+			<a href="{% url 'fancy' %}">Fancy</a>
+			<a href="{% url 'fransar' %}">Fransar</a>
+			<a href="{% url 'om_mig' %}">Om mig</a>
+			<a href="{% url 'kontakt' %}">Kontakt</a>
+		</div>
+	</div>
+	{% block content %}
+	<header>
+		<h1 id="header">Vaxning, sminkning och fransförlängning</h1>
+		<!-- <p>Av Carolina Tarrach, utbildad makeup artist</p> -- Kanske inte ska vara med, finns ändå i info -->
+	</header>
+	
+	<img src="{% static 'pics/front-page-lashes.png' %}" alt="Förlängda fransar" id="pagepic">
+	
+	<div id="container">
+		<h1 style="margin-left: 5px;">Bröllopssminkningar</h1>
+		<p>Genom min utbildning är jag kvalificerad för att utföra bröllopssminkningar för alla sorters bröllop. <a href="{% url 'kontakt' %}">Kontakta mig</a> gärna för att diskutera upplägg och pris.</p>
+
+		<h2>Erfarenheter</h2>
+		<p>Tidigare har jag sminkat på bröllop för muslimer, kristna och icke-troende. Oavsett vilket har jag kunskaperna som krävs och varje bröllop kräver sin egen stil. Vad den stilen är bestämmer du, 
+			med rådgivning från mig.</p>
+
+		<!--
+		<h3>Recensioner</h3>
+		<p>Lorem ipsum dolor sit amet</p>
+		<p>Lorem ipsum dolor sit amet</p>
+		<p>Lorem ipsum dolor sit amet</p>
+		-->
+	</div>
+	{% endblock %}
+	<footer>
+		<br><br><br><br><br><p>(c)2018 Faces by Carolina
+		&emsp;<a href="https://www.instagram.com/carolina.tarrach.mua/"><img src="{% static 'pics/instagram_logo.png' %}" alt="Instagram logo" style="width: 5vw;"></a></p>
+	</footer>
+</body>
+</html>

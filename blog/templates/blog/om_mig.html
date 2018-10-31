@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="sv-SE">
+<head>
+	<title>Faces by Carolina</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Makeup och fransar, av Carolina">
+	<meta name="keywords" content="makeup, fransar, fransförlängning, smink, vaxning">
+	<meta name="author" content="Christopher Einarsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+	
+	<link rel="icon" href="{% static 'pics/CT_favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+	<div class="dropdown">
+		<a href="{% url 'om_mig' %}" id="dropbtn">&#9776;</a>
+		<div class="dropdown-content">
+			<a href="{% url 'index' %}">Hem</a>
+			<a href="{% url 'wedding' %}">Bröllop</a>
+			<a href="{% url 'fancy' %}">Fancy</a>
+			<a href="{% url 'fransar' %}">Fransar</a>
+			<a href="{% url 'om_mig' %}">Om mig</a>
+			<a href="{% url 'kontakt' %}">Kontakt</a>
+		</div>
+	</div>
+	{% block content %}
+	<header>
+		<h1 id="header">Vaxning, sminkning och fransförlängning</h1>
+	</header>
+	
+	<img src="{% static 'pics/front-page-lashes.png' %}" alt="Förlängda fransar" id="pagepic">
+	
+	<div id="container">
+		<h2>Vem är jag?</h2>
+		<p>Carolina är utbildad makeup artist med en examen från Make Up Institute i Stockholm. Bosatt i Stockholm åtar hon sig främst uppdrag i Stockholmsområdet,
+			men kan vid efterfrågan även åta sig kortare uppdrag i Göteborg. 
+		</p>
+
+		<h3>Mina kvalifikationer</h3>
+		<ul>
+			<li>Make-up artist-examen från Make Up Institute i Stockholm</li>
+			<li>Certifierad inom vaxning</li>
+			<li>Certifierad inom fransförlängning</li>
+			<li>Certifierad inom nagelförlängning</li>
+		</ul>
+
+		<h3>Utmärkande erfarenheter</h3>
+		<ul>
+			<li>Makeup-assistent vid Idol 2018</li>
+			<li>Makeup-assistent på Mumbo-Jumbo 2018</li>
+			<li>Makeup-assistent på Allsång på Skansen 2018</li>
+			<li>Makeup artist på Kicks 2018</li>
+		</ul>
+
+	</div>
+	{% endblock %}
+	<footer>
+		<br><br><br><br><br><p>(c)2018 Faces by Carolina
+		&emsp;<a href="https://www.instagram.com/carolina.tarrach.mua/"><img src="{% static 'pics/instagram_logo.png' %}" alt="Instagram logo" style="width: 5vw;"></a></p>
+	</footer>
+</body>
+</html>

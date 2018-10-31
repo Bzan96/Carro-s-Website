@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Makeup och fransar, av Carolina">
+	<meta name="keywords" content="makeup, fransar, fransförlängning, smink, vaxning">
+	<meta name="author" content="Christopher Einarsson">
+	<title>{% block title %}Faces by Carolina{% endblock %}</title>
+	<link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+
+	<link rel="icon" href="{% static 'pics/CT_favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+	<div class="dropdown">
+		<a href="{% url 'post_list_view' %}" id="dropbtn">&#9776;</a>
+		<div class="dropdown-content">
+			<a href="{% url 'index' %}">Hem</a>
+			<a href="{% url 'wedding' %}">Bröllop</a>
+			<a href="{% url 'fancy' %}">Fancy</a>
+			<a href="{% url 'fransar' %}">Fransar</a>
+			<a href="{% url 'om_mig' %}">Om mig</a>
+			<a href="{% url 'kontakt' %}">Kontakt</a>
+		</div>
+	</div>
+	
+	<div id="container">
+		<div>
+			{% block content %}
+			
+			{% endblock %}
+		</div>
+		<div>
+			<h3>Faces By Carolina Blogg</h3>
+			<!-- "blog:post_feed" || including 'blog' is not necessary in Django 2.x -->
+			<p><a href="{% url 'post_feed' %}" target="_blank">Subscribe to RSS Feed</a></p>
+			<p>>>> SIDEBAR <<<</p>
+		</div>
+		<div id="fb-root"></div>
+			<script>
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+		</div>
+	</div>
+	<footer>
+		<br><br><br><br><br><p>(c)2018 Faces by Carolina
+		&emsp;<a href="https://www.instagram.com/carolina.tarrach.mua/"><img src="{% static 'pics/instagram_logo.png' %}" alt="Instagram logo" style="width: 5vw;"></a></p>
+	</footer>
+</body>
+</html>

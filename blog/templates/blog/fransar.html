@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="sv-SE">
+<head>
+	<title>Faces by Carolina</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Makeup, naglar och fransar, av Carolina">
+	<meta name="keywords" content="makeup, naglar, fransar, fransförlängning, smink, vaxning">
+	<meta name="author" content="Christopher Einarsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+	
+	<link rel="icon" href="{% static 'pics/CT_favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+	<div class="dropdown">
+		<a href="{% url 'fransar' %}" id="dropbtn">&#9776;</a>
+		<div class="dropdown-content">
+			<a href="{% url 'index' %}">Hem</a>
+			<a href="{% url 'wedding' %}">Bröllop</a>
+			<a href="{% url 'fancy' %}">Fancy</a>
+			<a href="{% url 'fransar' %}">Fransar</a>
+			<a href="{% url 'om_mig' %}">Om mig</a>
+			<a href="{% url 'kontakt' %}">Kontakt</a>
+		</div>
+	</div>
+	{% block content %}
+	<header>
+		<h1 id="header">Vaxning, sminkning och fransförlängning</h1>
+		<!-- <p>Av Carolina Tarrach, utbildad makeup artist</p> -- Kanske inte ska vara med, finns ändå i info -->
+	</header>
+	
+	<img src="{% static 'pics/front-page-lashes.png' %}" alt="Förlängda fransar" id="pagepic">
+	
+	<div id="container">
+			<h3>Fransar</h3>
+			<p>Jag är certifierad inom fransförlängning, vilket betyder att du hos mig kan förvänta dig att få ett professionellt arbete utfört.</p>
+	
+			<h3>Tidsåtgång</h3>
+			<p>Eftersom det tar tid för limmet att sätta sig ordentligt och det också är en del förberedelser som ska göras innan fransarna ska på,
+				bör du räkna med att det kan ta uppåt tre timmar innan alla fransarna är klara.
+			</p>
+	
+			<h4>Giftiga Medel</h4>
+			<p>Det förekommer det ibland att en del personer får allergiska reaktioner vid fransförlängningar. Därför använder jag skonsamma medel som
+				 är testade och godkända. Vet du om att du brukar reagera starkt på kemikalier rekommenderar jag att du kontaktar en läkare innan du 
+				bokar tid för behandling.</p>
+		</div>
+	{% endblock %}
+	<footer>
+		<br><br><br><br><br><p>(c)2018 Faces by Carolina
+		&emsp;<a href="https://www.instagram.com/carolina.tarrach.mua/"><img src="{% static 'pics/instagram_logo.png' %}" alt="Instagram logo" style="width: 5vw;"></a></p>
+	</footer>
+</body>
+</html>

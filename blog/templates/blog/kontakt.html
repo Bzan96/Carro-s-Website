@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="sv-SE">
+<head>
+	<title>Faces by Carolina - Kontakt</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Makeup, naglar och fransar, av Carolina">
+	<meta name="keywords" content="makeup, naglar, fransar, fransförlängning, smink, vaxning">
+	<meta name="author" content="Christopher Einarsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Bungee Shade" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sunflower:300" rel="stylesheet">
+	
+	<link rel="icon" href="{% static 'pics/CT_favicon.png' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+	<div class="dropdown">
+		<a href="{% url 'kontakt' %}" id="dropbtn">&#9776;</a>
+		<div class="dropdown-content">
+			<a href="{% url 'index' %}">Hem</a>
+			<a href="{% url 'wedding' %}">Bröllop</a>
+			<a href="{% url 'fancy' %}">Fancy</a>
+			<a href="{% url 'fransar' %}">Fransar</a>
+			<a href="{% url 'om_mig' %}">Om mig</a>
+			<a href="{% url 'kontakt' %}">Kontakt</a>
+		</div>
+	</div>
+	{% block content %}
+	<header>
+		<h1 id="header">Vaxning, sminkning och fransförlängning</h1>
+	</header>
+	
+	<img src="{% static 'pics/front-page-lashes.png' %}" alt="Förlängda fransar" id="pagepic">
+	
+	<h1>Kontakta Mig</h1>
+	<form method="post">
+		{% csrf_token %}
+		<!--{{ form.as_table }}-->
+		{{ form.contactForm }}
+		<div class="fieldWrapper">
+			{{ form.from_email.errors }}
+			<label for="{{ form.from_email.id_for_label }}">Din email:</label>
+			<br>{{ form.from_email }}
+		</div>
+		<br>
+		<div class="fieldWrapper">
+			{{ form.name.errors }}
+			<label for="{{ form.name.id_for_label }}">Ditt namn:</label>
+			<br>{{ form.name }}
+		</div>
+		<br>
+		<div class="fieldWrapper">
+			{{ form.message.errors }}
+			<label for="{{ form.message.id_for_label }}">Ditt meddelande:</label>
+			<br>{{ form.message }}
+		</div>
+		<div class="form-actions">
+			<br>
+			<input type="submit" value="Skicka in" id="sendbtn">
+		</div>
+	</form>
+	
+	{% endblock %}
+	<footer>
+		<br><br><br><br><br><p>(c)2018 Faces by Carolina
+		&emsp;<a href="https://www.instagram.com/carolina.tarrach.mua/"><img src="{% static 'pics/instagram_logo.png' %}" alt="Instagram logo" style="width: 5vw;"></a></p>
+	</footer>
+</body>
+</html>
